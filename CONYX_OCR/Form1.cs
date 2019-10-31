@@ -550,7 +550,6 @@ namespace CONYX_OCR
             OCR.frmUnSubmit frm = new OCR.frmUnSubmit();
             frm.ShowDialog();
             Show();
-
         }
     }
 }
