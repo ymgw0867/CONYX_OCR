@@ -1,0 +1,95 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CONYX_OCR.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CONYXConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\CONYX_OCR\MDB\CONYX.mdb&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\CONYX_OCR\MDB\CONYX.mdb</Value>
+    </Setting>
+    <Setting Name="SQLServerName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">YMGW-PC\OBCINSTANCE2X</Value>
+    </Setting>
+    <Setting Name="SQLLogin" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">fkdl</Value>
+    </Setting>
+    <Setting Name="SQLPass" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">sqlPass</Value>
+    </Setting>
+    <Setting Name="ocrStatus" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="scanPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\CONYX_OCR\SCAN\</Value>
+    </Setting>
+    <Setting Name="pcPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\CONYX_OCR\PC\</Value>
+    </Setting>
+    <Setting Name="dataPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\CONYX_CLI\DATA\</Value>
+    </Setting>
+    <Setting Name="trayPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\CONYX_OCR\TRAY\</Value>
+    </Setting>
+    <Setting Name="readPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\CONYX_OCR\READ\</Value>
+    </Setting>
+    <Setting Name="wrHands_Path" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Program Files (x86)\FRP\</Value>
+    </Setting>
+    <Setting Name="wrHands_Prg" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">WrhsMain.exe</Value>
+    </Setting>
+    <Setting Name="wrHands_Job" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">コニックス様出勤簿</Value>
+    </Setting>
+    <Setting Name="wrReaderOutFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">txtout.csv</Value>
+    </Setting>
+    <Setting Name="CONYX_CLIConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\CONYX_CLI\MDB\CONYX_CLI.mdb&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\CONYX_CLI\MDB\CONYX_CLI.mdb</Value>
+    </Setting>
+    <Setting Name="rekiHosei" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1988</Value>
+    </Setting>
+    <Setting Name="gengou" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">平成</Value>
+    </Setting>
+    <Setting Name="sqlCurrentDB" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">obc1sresource</Value>
+    </Setting>
+    <Setting Name="okPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\CONYX_OCR\OK\</Value>
+    </Setting>
+    <Setting Name="tifPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\CONYX_OCR\TIF\</Value>
+    </Setting>
+    <Setting Name="mdbOlePathCL" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\CONYX_CLI\MDB\CONYX_CLI.mdb&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\CONYX_CLI\MDB\CONYX_CLI.mdb</Value>
+    </Setting>
+    <Setting Name="mdbPathTempCL" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Provider=Microsoft.Jet.OLEDB.4.0;Data Source="C:\CONYX_CLI\MDB\CONYX_CLI _TEMP.mdb"&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=Microsoft.Jet.OLEDB.4.0;Data Source="C:\CONYX_CLI\MDB\CONYX_CLI _TEMP.mdb"</Value>
+    </Setting>
+    <Setting Name="mdbCLPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\CONYX_CLI\MDB\</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
