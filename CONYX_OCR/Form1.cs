@@ -551,5 +551,13 @@ namespace CONYX_OCR
             frm.ShowDialog();
             Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Hide();
+            OCR.frmEditLogRep frm = new OCR.frmEditLogRep();
+            frm.ShowDialog();
+            Show();                
+        }
     }
 }

@@ -38,6 +38,8 @@ namespace CONYX_OCR {
         
         private 過去勤務票明細DataTable table過去勤務票明細;
         
+        private 編集ログ表示用DataTable table編集ログ表示用;
+        
         private global::System.Data.DataRelation relation過去勤務票ヘッダ_過去勤務票明細;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
@@ -88,6 +90,9 @@ namespace CONYX_OCR {
                 }
                 if ((ds.Tables["過去勤務票明細"] != null)) {
                     base.Tables.Add(new 過去勤務票明細DataTable(ds.Tables["過去勤務票明細"]));
+                }
+                if ((ds.Tables["編集ログ表示用"] != null)) {
+                    base.Tables.Add(new 編集ログ表示用DataTable(ds.Tables["編集ログ表示用"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -179,6 +184,16 @@ namespace CONYX_OCR {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public 編集ログ表示用DataTable 編集ログ表示用 {
+            get {
+                return this.table編集ログ表示用;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -265,6 +280,9 @@ namespace CONYX_OCR {
                 if ((ds.Tables["過去勤務票明細"] != null)) {
                     base.Tables.Add(new 過去勤務票明細DataTable(ds.Tables["過去勤務票明細"]));
                 }
+                if ((ds.Tables["編集ログ表示用"] != null)) {
+                    base.Tables.Add(new 編集ログ表示用DataTable(ds.Tables["編集ログ表示用"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -340,6 +358,12 @@ namespace CONYX_OCR {
                     this.table過去勤務票明細.InitVars();
                 }
             }
+            this.table編集ログ表示用 = ((編集ログ表示用DataTable)(base.Tables["編集ログ表示用"]));
+            if ((initTable == true)) {
+                if ((this.table編集ログ表示用 != null)) {
+                    this.table編集ログ表示用.InitVars();
+                }
+            }
             this.relation過去勤務票ヘッダ_過去勤務票明細 = this.Relations["過去勤務票ヘッダ_過去勤務票明細"];
         }
         
@@ -365,6 +389,8 @@ namespace CONYX_OCR {
             base.Tables.Add(this.table出力先ＰＣ);
             this.table過去勤務票明細 = new 過去勤務票明細DataTable();
             base.Tables.Add(this.table過去勤務票明細);
+            this.table編集ログ表示用 = new 編集ログ表示用DataTable();
+            base.Tables.Add(this.table編集ログ表示用);
             this.relation過去勤務票ヘッダ_過去勤務票明細 = new global::System.Data.DataRelation("過去勤務票ヘッダ_過去勤務票明細", new global::System.Data.DataColumn[] {
                         this.table過去勤務票ヘッダ.IDColumn}, new global::System.Data.DataColumn[] {
                         this.table過去勤務票明細.ヘッダIDColumn}, false);
@@ -410,6 +436,12 @@ namespace CONYX_OCR {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerialize過去勤務票明細() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerialize編集ログ表示用() {
             return false;
         }
         
@@ -488,6 +520,9 @@ namespace CONYX_OCR {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void 過去勤務票明細RowChangeEventHandler(object sender, 過去勤務票明細RowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void 編集ログ表示用RowChangeEventHandler(object sender, 編集ログ表示用RowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3221,6 +3256,443 @@ namespace CONYX_OCR {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class 編集ログ表示用DataTable : global::System.Data.TypedTableBase<編集ログ表示用Row> {
+            
+            private global::System.Data.DataColumn column年;
+            
+            private global::System.Data.DataColumn column月;
+            
+            private global::System.Data.DataColumn column勤務表ヘッダID;
+            
+            private global::System.Data.DataColumn column社員番号;
+            
+            private global::System.Data.DataColumn column社員名;
+            
+            private global::System.Data.DataColumn column年月日時刻;
+            
+            private global::System.Data.DataColumn column編集日付;
+            
+            private global::System.Data.DataColumn column行番号;
+            
+            private global::System.Data.DataColumn column列名;
+            
+            private global::System.Data.DataColumn column項目名;
+            
+            private global::System.Data.DataColumn column変更前;
+            
+            private global::System.Data.DataColumn column変更後;
+            
+            private global::System.Data.DataColumn column編集アカウント;
+            
+            private global::System.Data.DataColumn column画像名;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public 編集ログ表示用DataTable() {
+                this.TableName = "編集ログ表示用";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal 編集ログ表示用DataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected 編集ログ表示用DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 年Column {
+                get {
+                    return this.column年;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 月Column {
+                get {
+                    return this.column月;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 勤務表ヘッダIDColumn {
+                get {
+                    return this.column勤務表ヘッダID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 社員番号Column {
+                get {
+                    return this.column社員番号;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 社員名Column {
+                get {
+                    return this.column社員名;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 年月日時刻Column {
+                get {
+                    return this.column年月日時刻;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 編集日付Column {
+                get {
+                    return this.column編集日付;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 行番号Column {
+                get {
+                    return this.column行番号;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 列名Column {
+                get {
+                    return this.column列名;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 項目名Column {
+                get {
+                    return this.column項目名;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 変更前Column {
+                get {
+                    return this.column変更前;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 変更後Column {
+                get {
+                    return this.column変更後;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 編集アカウントColumn {
+                get {
+                    return this.column編集アカウント;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn 画像名Column {
+                get {
+                    return this.column画像名;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public 編集ログ表示用Row this[int index] {
+                get {
+                    return ((編集ログ表示用Row)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event 編集ログ表示用RowChangeEventHandler 編集ログ表示用RowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event 編集ログ表示用RowChangeEventHandler 編集ログ表示用RowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event 編集ログ表示用RowChangeEventHandler 編集ログ表示用RowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event 編集ログ表示用RowChangeEventHandler 編集ログ表示用RowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Add編集ログ表示用Row(編集ログ表示用Row row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public 編集ログ表示用Row Add編集ログ表示用Row(int 年, int 月, string 勤務表ヘッダID, string 社員番号, string 社員名, System.DateTime 年月日時刻, System.DateTime 編集日付, int 行番号, string 列名, string 項目名, string 変更前, string 変更後, int 編集アカウント, string 画像名) {
+                編集ログ表示用Row row編集ログ表示用Row = ((編集ログ表示用Row)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        年,
+                        月,
+                        勤務表ヘッダID,
+                        社員番号,
+                        社員名,
+                        年月日時刻,
+                        編集日付,
+                        行番号,
+                        列名,
+                        項目名,
+                        変更前,
+                        変更後,
+                        編集アカウント,
+                        画像名};
+                row編集ログ表示用Row.ItemArray = columnValuesArray;
+                this.Rows.Add(row編集ログ表示用Row);
+                return row編集ログ表示用Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                編集ログ表示用DataTable cln = ((編集ログ表示用DataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new 編集ログ表示用DataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.column年 = base.Columns["年"];
+                this.column月 = base.Columns["月"];
+                this.column勤務表ヘッダID = base.Columns["勤務表ヘッダID"];
+                this.column社員番号 = base.Columns["社員番号"];
+                this.column社員名 = base.Columns["社員名"];
+                this.column年月日時刻 = base.Columns["年月日時刻"];
+                this.column編集日付 = base.Columns["編集日付"];
+                this.column行番号 = base.Columns["行番号"];
+                this.column列名 = base.Columns["列名"];
+                this.column項目名 = base.Columns["項目名"];
+                this.column変更前 = base.Columns["変更前"];
+                this.column変更後 = base.Columns["変更後"];
+                this.column編集アカウント = base.Columns["編集アカウント"];
+                this.column画像名 = base.Columns["画像名"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.column年 = new global::System.Data.DataColumn("年", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column年);
+                this.column月 = new global::System.Data.DataColumn("月", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column月);
+                this.column勤務表ヘッダID = new global::System.Data.DataColumn("勤務表ヘッダID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column勤務表ヘッダID);
+                this.column社員番号 = new global::System.Data.DataColumn("社員番号", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column社員番号);
+                this.column社員名 = new global::System.Data.DataColumn("社員名", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column社員名);
+                this.column年月日時刻 = new global::System.Data.DataColumn("年月日時刻", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column年月日時刻);
+                this.column編集日付 = new global::System.Data.DataColumn("編集日付", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column編集日付);
+                this.column行番号 = new global::System.Data.DataColumn("行番号", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column行番号);
+                this.column列名 = new global::System.Data.DataColumn("列名", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column列名);
+                this.column項目名 = new global::System.Data.DataColumn("項目名", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column項目名);
+                this.column変更前 = new global::System.Data.DataColumn("変更前", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column変更前);
+                this.column変更後 = new global::System.Data.DataColumn("変更後", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column変更後);
+                this.column編集アカウント = new global::System.Data.DataColumn("編集アカウント", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column編集アカウント);
+                this.column画像名 = new global::System.Data.DataColumn("画像名", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column画像名);
+                this.column勤務表ヘッダID.MaxLength = 17;
+                this.column社員番号.MaxLength = 8;
+                this.column社員名.MaxLength = 255;
+                this.column列名.MaxLength = 255;
+                this.column項目名.MaxLength = 255;
+                this.column変更前.MaxLength = 255;
+                this.column変更後.MaxLength = 255;
+                this.column画像名.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public 編集ログ表示用Row New編集ログ表示用Row() {
+                return ((編集ログ表示用Row)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new 編集ログ表示用Row(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(編集ログ表示用Row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.編集ログ表示用RowChanged != null)) {
+                    this.編集ログ表示用RowChanged(this, new 編集ログ表示用RowChangeEvent(((編集ログ表示用Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.編集ログ表示用RowChanging != null)) {
+                    this.編集ログ表示用RowChanging(this, new 編集ログ表示用RowChangeEvent(((編集ログ表示用Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.編集ログ表示用RowDeleted != null)) {
+                    this.編集ログ表示用RowDeleted(this, new 編集ログ表示用RowChangeEvent(((編集ログ表示用Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.編集ログ表示用RowDeleting != null)) {
+                    this.編集ログ表示用RowDeleting(this, new 編集ログ表示用RowChangeEvent(((編集ログ表示用Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Remove編集ログ表示用Row(編集ログ表示用Row row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                CONYXDataSet ds = new CONYXDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "編集ログ表示用DataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class ログインユーザーRow : global::System.Data.DataRow {
@@ -5133,6 +5605,413 @@ namespace CONYX_OCR {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class 編集ログ表示用Row : global::System.Data.DataRow {
+            
+            private 編集ログ表示用DataTable table編集ログ表示用;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal 編集ログ表示用Row(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.table編集ログ表示用 = ((編集ログ表示用DataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int 年 {
+                get {
+                    try {
+                        return ((int)(this[this.table編集ログ表示用.年Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'編集ログ表示用\' にある列 \'年\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table編集ログ表示用.年Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int 月 {
+                get {
+                    try {
+                        return ((int)(this[this.table編集ログ表示用.月Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'編集ログ表示用\' にある列 \'月\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table編集ログ表示用.月Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string 勤務表ヘッダID {
+                get {
+                    try {
+                        return ((string)(this[this.table編集ログ表示用.勤務表ヘッダIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'編集ログ表示用\' にある列 \'勤務表ヘッダID\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table編集ログ表示用.勤務表ヘッダIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string 社員番号 {
+                get {
+                    try {
+                        return ((string)(this[this.table編集ログ表示用.社員番号Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'編集ログ表示用\' にある列 \'社員番号\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table編集ログ表示用.社員番号Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string 社員名 {
+                get {
+                    try {
+                        return ((string)(this[this.table編集ログ表示用.社員名Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'編集ログ表示用\' にある列 \'社員名\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table編集ログ表示用.社員名Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime 年月日時刻 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.table編集ログ表示用.年月日時刻Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'編集ログ表示用\' にある列 \'年月日時刻\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table編集ログ表示用.年月日時刻Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime 編集日付 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.table編集ログ表示用.編集日付Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'編集ログ表示用\' にある列 \'編集日付\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table編集ログ表示用.編集日付Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int 行番号 {
+                get {
+                    try {
+                        return ((int)(this[this.table編集ログ表示用.行番号Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'編集ログ表示用\' にある列 \'行番号\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table編集ログ表示用.行番号Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string 列名 {
+                get {
+                    try {
+                        return ((string)(this[this.table編集ログ表示用.列名Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'編集ログ表示用\' にある列 \'列名\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table編集ログ表示用.列名Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string 項目名 {
+                get {
+                    try {
+                        return ((string)(this[this.table編集ログ表示用.項目名Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'編集ログ表示用\' にある列 \'項目名\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table編集ログ表示用.項目名Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string 変更前 {
+                get {
+                    try {
+                        return ((string)(this[this.table編集ログ表示用.変更前Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'編集ログ表示用\' にある列 \'変更前\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table編集ログ表示用.変更前Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string 変更後 {
+                get {
+                    try {
+                        return ((string)(this[this.table編集ログ表示用.変更後Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'編集ログ表示用\' にある列 \'変更後\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table編集ログ表示用.変更後Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int 編集アカウント {
+                get {
+                    try {
+                        return ((int)(this[this.table編集ログ表示用.編集アカウントColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'編集ログ表示用\' にある列 \'編集アカウント\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table編集ログ表示用.編集アカウントColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string 画像名 {
+                get {
+                    try {
+                        return ((string)(this[this.table編集ログ表示用.画像名Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'編集ログ表示用\' にある列 \'画像名\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.table編集ログ表示用.画像名Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is年Null() {
+                return this.IsNull(this.table編集ログ表示用.年Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set年Null() {
+                this[this.table編集ログ表示用.年Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is月Null() {
+                return this.IsNull(this.table編集ログ表示用.月Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set月Null() {
+                this[this.table編集ログ表示用.月Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is勤務表ヘッダIDNull() {
+                return this.IsNull(this.table編集ログ表示用.勤務表ヘッダIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set勤務表ヘッダIDNull() {
+                this[this.table編集ログ表示用.勤務表ヘッダIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is社員番号Null() {
+                return this.IsNull(this.table編集ログ表示用.社員番号Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set社員番号Null() {
+                this[this.table編集ログ表示用.社員番号Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is社員名Null() {
+                return this.IsNull(this.table編集ログ表示用.社員名Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set社員名Null() {
+                this[this.table編集ログ表示用.社員名Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is年月日時刻Null() {
+                return this.IsNull(this.table編集ログ表示用.年月日時刻Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set年月日時刻Null() {
+                this[this.table編集ログ表示用.年月日時刻Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is編集日付Null() {
+                return this.IsNull(this.table編集ログ表示用.編集日付Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set編集日付Null() {
+                this[this.table編集ログ表示用.編集日付Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is行番号Null() {
+                return this.IsNull(this.table編集ログ表示用.行番号Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set行番号Null() {
+                this[this.table編集ログ表示用.行番号Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is列名Null() {
+                return this.IsNull(this.table編集ログ表示用.列名Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set列名Null() {
+                this[this.table編集ログ表示用.列名Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is項目名Null() {
+                return this.IsNull(this.table編集ログ表示用.項目名Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set項目名Null() {
+                this[this.table編集ログ表示用.項目名Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is変更前Null() {
+                return this.IsNull(this.table編集ログ表示用.変更前Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set変更前Null() {
+                this[this.table編集ログ表示用.変更前Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is変更後Null() {
+                return this.IsNull(this.table編集ログ表示用.変更後Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set変更後Null() {
+                this[this.table編集ログ表示用.変更後Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is編集アカウントNull() {
+                return this.IsNull(this.table編集ログ表示用.編集アカウントColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set編集アカウントNull() {
+                this[this.table編集ログ表示用.編集アカウントColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is画像名Null() {
+                return this.IsNull(this.table編集ログ表示用.画像名Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set画像名Null() {
+                this[this.table編集ログ表示用.画像名Column] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -5356,6 +6235,40 @@ namespace CONYX_OCR {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public 過去勤務票明細Row Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class 編集ログ表示用RowChangeEvent : global::System.EventArgs {
+            
+            private 編集ログ表示用Row eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public 編集ログ表示用RowChangeEvent(編集ログ表示用Row row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public 編集ログ表示用Row Row {
                 get {
                     return this.eventRow;
                 }
@@ -9862,6 +10775,212 @@ namespace CONYX_OCR.CONYXDataSetTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class 編集ログ表示用TableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.OleDb.OleDbDataAdapter _adapter;
+        
+        private global::System.Data.OleDb.OleDbConnection _connection;
+        
+        private global::System.Data.OleDb.OleDbTransaction _transaction;
+        
+        private global::System.Data.OleDb.OleDbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public 編集ログ表示用TableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.OleDb.OleDbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.OleDb.OleDbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.OleDb.OleDbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.OleDb.OleDbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.OleDb.OleDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "編集ログ表示用";
+            tableMapping.ColumnMappings.Add("年", "年");
+            tableMapping.ColumnMappings.Add("月", "月");
+            tableMapping.ColumnMappings.Add("勤務表ヘッダID", "勤務表ヘッダID");
+            tableMapping.ColumnMappings.Add("社員番号", "社員番号");
+            tableMapping.ColumnMappings.Add("社員名", "社員名");
+            tableMapping.ColumnMappings.Add("年月日時刻", "年月日時刻");
+            tableMapping.ColumnMappings.Add("編集日付", "編集日付");
+            tableMapping.ColumnMappings.Add("行番号", "行番号");
+            tableMapping.ColumnMappings.Add("列名", "列名");
+            tableMapping.ColumnMappings.Add("項目名", "項目名");
+            tableMapping.ColumnMappings.Add("変更前", "変更前");
+            tableMapping.ColumnMappings.Add("変更後", "変更後");
+            tableMapping.ColumnMappings.Add("編集アカウント", "編集アカウント");
+            tableMapping.ColumnMappings.Add("画像名", "画像名");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.OleDb.OleDbConnection();
+            this._connection.ConnectionString = global::CONYX_OCR.Properties.Settings.Default.CONYXConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT 過去勤務票ヘッダ.年 as 年, 過去勤務票ヘッダ.月 as 月, 過去勤務票ヘッダ.画像名, 出勤簿編集ログ.勤務表ヘッダID, 出勤簿編集ログ.社員番号, 出勤簿編集ログ.社員名, 出勤簿編集ログ.年月日時刻, 出勤簿編集ログ.編集日付, 出勤簿編集ログ.行番号, 出勤簿編集ログ.列名, 出勤簿編集ログ.項目名, 出勤簿編集ログ.変更前, 出勤簿編集ログ.変更後, 出勤簿編集ログ.編集アカウント FROM 過去勤務票ヘッダ inner join 出勤簿編集ログ on 過去勤務票ヘッダ.ID = 出勤簿編集ログ.勤務表ヘッダID where 過去勤務票ヘッダ.年 = ? and 過去勤務票ヘッダ.月 = ?";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("年", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "年", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("月", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "月", global::System.Data.DataRowVersion.Current, false, null));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(CONYXDataSet.編集ログ表示用DataTable dataTable, global::System.Nullable<int> 年, global::System.Nullable<int> 月) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((年.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(年.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((月.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(月.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual CONYXDataSet.編集ログ表示用DataTable GetData(global::System.Nullable<int> 年, global::System.Nullable<int> 月) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((年.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(年.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((月.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(月.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            CONYXDataSet.編集ログ表示用DataTable dataTable = new CONYXDataSet.編集ログ表示用DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     
