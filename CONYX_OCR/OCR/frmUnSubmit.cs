@@ -36,9 +36,6 @@ namespace CONYX_OCR.OCR
         
         string sTittle = "過去出勤簿一覧";
 
-        string b_img = string.Empty;        // 印刷用画像名 2019/12/13
-        bool ValChangeStatus = false;       // 2019/12/13
-
         private void txtYear_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b')
@@ -80,8 +77,6 @@ namespace CONYX_OCR.OCR
         private string ColKinmuCode = "c10";
         private string ColYear = "c11";
         private string ColMonth = "c12";
-        private string ColCheck = "c13";    // 2019/12/13
-        private string ColImg = "c14";      // 2019/12/13
 
         /// <summary>
         /// データグリッドビューの定義を行います
@@ -90,8 +85,6 @@ namespace CONYX_OCR.OCR
         {
             try
             {
-                ValChangeStatus = false;    // 2019/12/13
-                    
                 //フォームサイズ定義
 
                 // 列スタイルを変更する
@@ -122,22 +115,14 @@ namespace CONYX_OCR.OCR
                 // 奇数行の色
                 tempDGV.AlternatingRowsDefaultCellStyle.BackColor = SystemColors.Control;
 
-                // 各列設定
-                DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
-                chk.Name = ColCheck;
-                tempDGV.Columns.Add(chk);
-                tempDGV.Columns[ColCheck].HeaderText = "印刷"; // 2019/12/13
-
+                // 各列幅指定
                 tempDGV.Columns.Add(ColYear, "年");
                 tempDGV.Columns.Add(ColMonth, "月");
                 tempDGV.Columns.Add(ColCode, "社員番号");
                 tempDGV.Columns.Add(ColName, "氏名");
                 tempDGV.Columns.Add(ColMemo, "処理日");
                 tempDGV.Columns.Add(ColID, "hID");
-                tempDGV.Columns.Add(ColImg, ""); // 2019/12/13
 
-                // 各列幅指定
-                tempDGV.Columns[ColCheck].Width = 50; // 2019/12/13
                 tempDGV.Columns[ColYear].Width = 80;
                 tempDGV.Columns[ColMonth].Width = 60;
                 tempDGV.Columns[ColCode].Width = 100;
@@ -146,31 +131,17 @@ namespace CONYX_OCR.OCR
                 tempDGV.Columns[ColID].Width = 160;
 
                 //tempDGV.Columns[ColID].Visible = false;
-                tempDGV.Columns[ColImg].Visible = false;
 
                 tempDGV.Columns[ColName].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-                tempDGV.Columns[ColCheck].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; // 2019/12/13
                 tempDGV.Columns[ColYear].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 tempDGV.Columns[ColMonth].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 tempDGV.Columns[ColCode].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 tempDGV.Columns[ColMemo].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 tempDGV.Columns[ColID].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                // 編集可否：2019/12/13
-                tempDGV.ReadOnly = false;
-                foreach (DataGridViewColumn item in tempDGV.Columns)
-                {
-                    // チェックボックスのみ使用可
-                    if (item.Name == ColCheck)
-                    {
-                        tempDGV.Columns[item.Name].ReadOnly = false;
-                    }
-                    else
-                    {
-                        tempDGV.Columns[item.Name].ReadOnly = true;
-                    }
-                }
+                // 編集可否
+                tempDGV.ReadOnly = true;
 
                 // 行ヘッダを表示しない
                 tempDGV.RowHeadersVisible = false;
@@ -212,8 +183,6 @@ namespace CONYX_OCR.OCR
             txtYear.Text = global.cnfYear.ToString();
             txtMonth.Text = global.cnfMonth.ToString();
             txtShainNum.Text = string.Empty;
-
-            button2.Enabled = false;    // 2019/12/13
         }
 
         private void btnSel_Click(object sender, EventArgs e)
@@ -269,6 +238,10 @@ namespace CONYX_OCR.OCR
         {
             this.Cursor = Cursors.WaitCursor;
 
+            //// 奉行SQLServer接続文字列取得
+            //string sc = sqlControl.obcConnectSting.get(_DBName);
+            //sqlControl.DataControl sdCon = new sqlControl.DataControl(sc);
+
             // 過去データ読み込み
             hAdp.FillByYYMM(dts.過去勤務票ヘッダ, Utility.StrtoInt(txtYear.Text), Utility.StrtoInt(txtMonth.Text));
 
@@ -279,6 +252,18 @@ namespace CONYX_OCR.OCR
 
             var s = dts.過去勤務票ヘッダ.OrderByDescending(a => a.年).ThenByDescending(a => a.月).ThenBy(a => a.社員番号).ThenByDescending(a => a.更新年月日);
             
+            //if (txtYear.Text.Trim() != string.Empty)
+            //{
+            //    s = s.Where(a => a.年 == Utility.StrtoInt(txtYear.Text))
+            //        .OrderByDescending(a => a.年).ThenByDescending(a => a.月).ThenBy(a => a.社員番号).ThenByDescending(a => a.更新年月日);
+            //}
+
+            //if (txtMonth.Text.Trim() != string.Empty)
+            //{
+            //    s = s.Where(a => a.月 == Utility.StrtoInt(txtMonth.Text))
+            //       .OrderByDescending(a => a.年).ThenByDescending(a => a.月).ThenBy(a => a.社員番号).ThenByDescending(a => a.更新年月日);
+            //}
+
             if (txtShainNum.Text.Trim() != string.Empty)
             {
                 s = s.Where(a => a.社員番号 == Utility.StrtoInt(txtShainNum.Text))
@@ -291,12 +276,9 @@ namespace CONYX_OCR.OCR
                    .OrderByDescending(a => a.年).ThenByDescending(a => a.月).ThenBy(a => a.社員番号).ThenByDescending(a => a.更新年月日);
             }
 
-            ValChangeStatus = true;
-
             foreach (var t in s)
             {
                 g.Rows.Add();
-                g[ColCheck, g.Rows.Count - 1].Value = false;
                 g[ColYear, g.Rows.Count - 1].Value = t.年.ToString();
                 g[ColMonth, g.Rows.Count - 1].Value = t.月.ToString();
                 g[ColCode, g.Rows.Count - 1].Value = t.社員番号.ToString().PadLeft(8, '0');                
@@ -304,7 +286,6 @@ namespace CONYX_OCR.OCR
                 g[ColMemo, g.Rows.Count - 1].Value = t.更新年月日.ToShortDateString() + " " + t.更新年月日.Hour.ToString().PadLeft(2, '0') + ":" + t.更新年月日.Minute.ToString().PadLeft(2, '0') + ":" + t.更新年月日.Second.ToString().PadLeft(2, '0');
 
                 g[ColID, g.Rows.Count - 1].Value = t.ID.ToString();
-                g[ColImg, g.Rows.Count - 1].Value = t.画像名;     // 2019/12/13
             }
             
             dataGridView1.CurrentCell = null;
@@ -370,99 +351,6 @@ namespace CONYX_OCR.OCR
         private void txtRtn_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        ///-----------------------------------------------------------
-        /// <summary>
-        ///     出勤簿画像印刷 : 2019/12/13 </summary>
-        ///-----------------------------------------------------------
-        private void batch_ImagePrint()
-        {
-            foreach (DataGridViewRow r in dataGridView1.Rows)
-            {
-                // チェックされているスタッフを対象とする
-                if (dataGridView1[ColCheck, r.Index].Value.ToString() == "False")
-                {
-                    continue;
-                }
-
-                // 画像名
-                string img = Utility.NulltoStr(dataGridView1[ColImg, r.Index].Value);
-
-                if (img.Length >= 6)
-                {
-                    // 画像フォルダパス
-                    string dirName = Properties.Settings.Default.tifPath + img.Substring(0, 6) + @"\";
-
-                    b_img = dirName + img;
-
-                    if (System.IO.File.Exists(b_img))
-                    {
-                        printDocument1.Print();
-
-                        // 後片付け
-                        printDocument1.Dispose();
-                    }
-                }
-            }
-        }
-
-
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            Image img;
-
-            img = Image.FromFile(b_img);
-            e.Graphics.DrawImage(img, 0, 0);
-            e.HasMorePages = false;
-
-            img.Dispose();  // 後片付け 2019/01/15
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            batch_ImagePrint();
-        }
-
-        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            if (!ValChangeStatus)
-            {
-                return;
-            }
-
-            if (e.ColumnIndex != 0)
-            {
-                return;
-            }
-
-            int pCnt = 0;
-
-            foreach (DataGridViewRow r in dataGridView1.Rows)
-            {
-                // 印刷チェックを対象とする
-                if (dataGridView1[ColCheck, r.Index].Value.ToString() == "True")
-                {
-                    pCnt++;
-                }
-            }
-
-            if (pCnt > 0)
-            {
-                button2.Enabled = true;
-            }
-            else
-            {
-                button2.Enabled = false;
-            }
-        }
-
-        private void dataGridView1_CurrentCellDirtyStateChanged(object sender, EventArgs e)
-        {
-            if (dataGridView1.IsCurrentCellDirty)
-            {
-                dataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit);
-            }
         }
     }
 }

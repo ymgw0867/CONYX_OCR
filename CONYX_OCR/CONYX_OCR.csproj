@@ -61,9 +61,6 @@
     <Reference Include="Leadtools.Codecs.Tif, Version=16.5.0.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86" />
     <Reference Include="Leadtools.ImageProcessing.Core, Version=16.5.0.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86" />
     <Reference Include="Leadtools.WinForms, Version=16.5.0.0, Culture=neutral, PublicKeyToken=9cf889f53ea9b907, processorArchitecture=x86" />
-    <Reference Include="MyLibrary">
-      <HintPath>..\..\インストーラー用\MyLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -129,12 +126,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="OCR\clsJiyu.cs" />
-    <Compile Include="OCR\frmImgView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OCR\frmImgView.designer.cs">
-      <DependentUpon>frmImgView.cs</DependentUpon>
-    </Compile>
     <Compile Include="OCR\frmPastCorrect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,12 +150,6 @@
     <Compile Include="OCR\frmOCRPC.designer.cs">
       <DependentUpon>frmOCRPC.cs</DependentUpon>
     </Compile>
-    <Compile Include="OCR\frmEditLogRep.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OCR\frmEditLogRep.designer.cs">
-      <DependentUpon>frmEditLogRep.cs</DependentUpon>
-    </Compile>
     <Compile Include="OCR\frmUnSubmit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,9 +173,6 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OCR\frmImgView.resx">
-      <DependentUpon>frmImgView.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="OCR\frmPastCorrect.resx">
       <DependentUpon>frmPastCorrect.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,9 +181,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OCR\frmOCRPC.resx">
       <DependentUpon>frmOCRPC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OCR\frmEditLogRep.resx">
-      <DependentUpon>frmEditLogRep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OCR\frmUnSubmit.resx">
       <DependentUpon>frmUnSubmit.cs</DependentUpon>

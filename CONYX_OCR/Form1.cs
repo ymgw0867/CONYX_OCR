@@ -114,20 +114,32 @@ namespace CONYX_OCR
 
             // ＯＣＲ認識実行
             Hide();
-            doFaxOCR(Properties.Settings.Default.wrHands_Job, Properties.Settings.Default.dataPath);
 
-            // PC毎の出力先フォルダがなければ作成する
+            // PC毎の出力先フォルダがなければ作成する：2020/03/04
             string rPath = Properties.Settings.Default.pcPath + pcName + @"\";
             if (System.IO.Directory.Exists(rPath) == false)
             {
                 System.IO.Directory.CreateDirectory(rPath);
             }
 
-            // データを移動する
-            foreach (var file in System.IO.Directory.GetFiles(Properties.Settings.Default.dataPath))
-            {
-                System.IO.File.Move(file, rPath + System.IO.Path.GetFileName(file));
-            }
+            //doFaxOCR(Properties.Settings.Default.wrHands_Job, Properties.Settings.Default.dataPath);
+
+            // PC別フォルダに直接出力 2019/03/04
+            doFaxOCR(Properties.Settings.Default.wrHands_Job, rPath);  
+
+            // コメント化：2020/03/04
+            //// PC毎の出力先フォルダがなければ作成する
+            //string rPath = Properties.Settings.Default.pcPath + pcName + @"\";
+            //if (System.IO.Directory.Exists(rPath) == false)
+            //{
+            //    System.IO.Directory.CreateDirectory(rPath);
+            //}
+
+            //// データを移動する
+            //foreach (var file in System.IO.Directory.GetFiles(Properties.Settings.Default.dataPath))
+            //{
+            //    System.IO.File.Move(file, rPath + System.IO.Path.GetFileName(file));
+            //}
 
             Show();
         }
@@ -550,14 +562,6 @@ namespace CONYX_OCR
             OCR.frmUnSubmit frm = new OCR.frmUnSubmit();
             frm.ShowDialog();
             Show();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            Hide();
-            OCR.frmEditLogRep frm = new OCR.frmEditLogRep();
-            frm.ShowDialog();
-            Show();                
         }
     }
 }
