@@ -965,7 +965,10 @@ namespace CONYX_OCR.OCR
             if (dtsCl.勤務票ヘッダ.Count() > 0)
             {
                 // カレントレコードインデックスを再設定
-                if (dtsCl.勤務票ヘッダ.Count() - 1 < cI) cI = dtsCl.勤務票ヘッダ.Count() - 1;
+                if (dtsCl.勤務票ヘッダ.Count() - 1 < cI)
+                {
+                    cI = dtsCl.勤務票ヘッダ.Count() - 1;
+                }
 
                 // データ画面表示
                 showOcrData(cI);

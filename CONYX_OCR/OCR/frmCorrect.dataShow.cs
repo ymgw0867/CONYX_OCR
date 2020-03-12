@@ -33,7 +33,8 @@ namespace CONYX_OCR.OCR
             editLogStatus = false;
 
             // 勤務票ヘッダテーブル行を取得
-            CONYX_CLIDataSet.勤務票ヘッダRow r = (CONYX_CLIDataSet.勤務票ヘッダRow)dtsCl.勤務票ヘッダ.Rows[iX];
+            //CONYX_CLIDataSet.勤務票ヘッダRow r = (CONYX_CLIDataSet.勤務票ヘッダRow)dtsCl.勤務票ヘッダ.Rows[iX];
+            CONYX_CLIDataSet.勤務票ヘッダRow r = dtsCl.勤務票ヘッダ.Single(a => a.ID == cIdx[iX]);
 
             // フォーム初期化
             formInitialize(dID, iX);
